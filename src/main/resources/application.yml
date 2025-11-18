@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: popcorn-backend
+
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USER}
+    password: ${DATABASE_PASSWORD}
+
+  jpa:
+    show-sql: true
+
+app:
+  movieClient:
+    apiKey: ${API_KEY}

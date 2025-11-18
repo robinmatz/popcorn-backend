@@ -1,0 +1,48 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001-create-movie-table.yaml
+      author: Robin
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            tableName: movie
+            columns:
+              - column:
+                  name: id
+                  type: INT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: imdb_id
+                  type: VARCHAR(255)
+              - column:
+                  name: title
+                  type: VARCHAR(255)
+              - column:
+                  name: year
+                  type: VARCHAR(255)
+              - column:
+                  name: poster
+                  type: VARCHAR(255)
+              - column:
+                  name: runtime
+                  type: VARCHAR(255)
+              - column:
+                  name: imdb_rating
+                  type: VARCHAR(255)
+              - column:
+                  name: plot
+                  type: VARCHAR(255)
+              - column:
+                  name: released
+                  type: VARCHAR(20)
+              - column:
+                  name: actors
+                  type: VARCHAR(255)
+              - column:
+                  name: director
+                  type: VARCHAR(100)
+              - column:
+                  name: genre
+                  type: VARCHAR(50)
