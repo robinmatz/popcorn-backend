@@ -20,9 +20,6 @@ jobs:
           java-version: '24'
           distribution: 'corretto'
 
-      - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v5
-
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v3
         with:
@@ -31,7 +28,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build OCI Image
-        run: gradle bootBuildImage --imageName ghcr.io/${{ github.repository }}
+        run: ./gradlew bootBuildImage --imageName ghcr.io/${{ github.repository }}
 
       - name: Push to GitHub Container Registry
         run: docker push ghcr.io/${{ github.repository }}
