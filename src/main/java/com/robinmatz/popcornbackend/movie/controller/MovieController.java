@@ -14,5 +14,5 @@ public interface MovieController {
     List<MovieDto> getMovies(@RequestParam String name);
 
     @GetMapping(value = "/api/movies/{imdbID}/details", produces = MediaType.APPLICATION_JSON_VALUE)
-    MovieDetailsDto getMovieDetails(@PathVariable("imdbID") String imbdId);
+    MovieDetailsDto getMovieDetails(@PathVariable("imdbID") String imdbId);
 }

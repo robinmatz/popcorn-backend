@@ -25,8 +25,8 @@ public class MovieControllerImpl implements MovieController {
 
     @Override
     @ResponseBody
-    public MovieDetailsDto getMovieDetails(String imbdId) {
-        return movieService.getMovieDetails(imbdId);
+    public MovieDetailsDto getMovieDetails(String imdbId) {
+        return movieService.getMovieDetails(imdbId);
     }
 
 }

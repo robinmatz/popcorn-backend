@@ -27,15 +27,15 @@ public class MovieService {
     }
 
 
-    public MovieDetailsDto getMovieDetails(String imbdId) {
+    public MovieDetailsDto getMovieDetails(String imdbId) {
         MovieDetailsDto movieDetailsDto;
-        if (movieRepository.existsByImdbId(imbdId)) {
-            Movie movie = movieRepository.findByImdbId(imbdId);
+        if (movieRepository.existsByImdbId(imdbId)) {
+            Movie movie = movieRepository.findByImdbId(imdbId);
             movieDetailsDto = movieMapper.map(movie);
         } else {
-            OmdbApiMovieDetails movieDetails = movieClient.getMovieDetails(imbdId);
+            OmdbApiMovieDetails movieDetails = movieClient.getMovieDetails(imdbId);
             Movie movie = movieMapper.mapToMovie(movieDetails);
-            movie.setImdbId(imbdId);
+            movie.setImdbId(imdbId);
             movieDetailsDto = movieMapper.map(movieDetails);
             movieRepository.saveAndFlush(movie);
         }

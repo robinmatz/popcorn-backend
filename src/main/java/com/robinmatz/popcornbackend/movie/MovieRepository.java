@@ -8,5 +8,5 @@ public interface MovieRepository extends JpaRepository<Movie, Integer> {
 
     boolean existsByImdbId(String imdbId);
 
-    Movie findByImdbId(String imbdId);
+    Movie findByImdbId(String imdbId);
 }

@@ -23,7 +23,7 @@ public class MovieMapper {
         movieDto.setPoster(ombdApiMovie.getPoster());
         movieDto.setTitle(ombdApiMovie.getTitle());
         movieDto.setYear(ombdApiMovie.getYear());
-        movieDto.setImbdID(ombdApiMovie.getImdbID());
+        movieDto.setImdbId(ombdApiMovie.getImdbID());
         movieDto.setType(ombdApiMovie.getType());
         return movieDto;
     }

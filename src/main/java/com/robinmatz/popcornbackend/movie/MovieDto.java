@@ -1,12 +1,15 @@
 package com.robinmatz.popcornbackend.movie;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class MovieDto {
 
     private String title;
 
     private String year;
 
-    private String imbdID;
+    @JsonProperty("imdbID")
+    private String imdbId;
 
     private String type;
 
@@ -28,12 +31,12 @@ public class MovieDto {
         this.year = year;
     }
 
-    public String getImbdID() {
-        return imbdID;
+    public String getImdbId() {
+        return imdbId;
     }
 
-    public void setImbdID(String imbdID) {
-        this.imbdID = imbdID;
+    public void setImdbId(String imdbId) {
+        this.imdbId = imdbId;
     }
 
     public String getType() {
