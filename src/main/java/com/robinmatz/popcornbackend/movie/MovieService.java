@@ -35,6 +35,7 @@ public class MovieService {
         } else {
             OmdbApiMovieDetails movieDetails = movieClient.getMovieDetails(imbdId);
             Movie movie = movieMapper.mapToMovie(movieDetails);
+            movie.setImdbId(imbdId);
             movieDetailsDto = movieMapper.map(movieDetails);
             movieRepository.saveAndFlush(movie);
         }

@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: 002-add-unique-constraint.yaml
+      author: Robin
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            tableName: movie
+            columnNames: imdb_id
+
+        - addNotNullConstraint:
+            tableName: movie
+            columnName: imdb_id
+            columnDataType: VARCHAR(255)
