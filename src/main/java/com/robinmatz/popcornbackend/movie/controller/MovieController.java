@@ -1,7 +1,7 @@
 package com.robinmatz.popcornbackend.movie.controller;
 
-import com.robinmatz.popcornbackend.movie.MovieDetailsDto;
-import com.robinmatz.popcornbackend.movie.MovieDto;
+import com.robinmatz.popcornbackend.movie.dto.MovieDetailsDto;
+import com.robinmatz.popcornbackend.movie.dto.MovieDto;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

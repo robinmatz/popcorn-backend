@@ -1,4 +1,4 @@
-package com.robinmatz.popcornbackend.movie;
+package com.robinmatz.popcornbackend.movie.persistance;
 
 import jakarta.persistence.*;
 

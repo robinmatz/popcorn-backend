@@ -1,4 +1,4 @@
-package com.robinmatz.popcornbackend.movie.external;
+package com.robinmatz.popcornbackend.movie.external.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

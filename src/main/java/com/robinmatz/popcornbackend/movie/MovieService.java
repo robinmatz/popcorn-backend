@@ -1,9 +1,14 @@
 package com.robinmatz.popcornbackend.movie;
 
+import com.robinmatz.popcornbackend.movie.dto.MovieDetailsDto;
+import com.robinmatz.popcornbackend.movie.dto.MovieDto;
+import com.robinmatz.popcornbackend.movie.exception.MovieNotFoundException;
 import com.robinmatz.popcornbackend.movie.external.MovieClient;
-import com.robinmatz.popcornbackend.movie.external.OmbdApiSearchResult;
-import com.robinmatz.popcornbackend.movie.external.OmdbApiMovieDetails;
-import com.robinmatz.popcornbackend.movie.mapper.MovieMapper;
+import com.robinmatz.popcornbackend.movie.external.dto.OmdbApiMovieDetails;
+import com.robinmatz.popcornbackend.movie.external.dto.OmdbApiResponse;
+import com.robinmatz.popcornbackend.movie.external.dto.OmdbApiSearch;
+import com.robinmatz.popcornbackend.movie.persistance.Movie;
+import com.robinmatz.popcornbackend.movie.persistance.MovieRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,8 +27,12 @@ public class MovieService {
     }
 
     public List<MovieDto> getMovies(String name) {
-        OmbdApiSearchResult movies = movieClient.getMovies(name);
-        return movieMapper.map(movies);
+        OmdbApiResponse movies = movieClient.getMovies(name);
+        if (movies instanceof OmdbApiSearch) {
+            return movieMapper.map((OmdbApiSearch) movies);
+        } else {
+            throw new MovieNotFoundException("Movie not found");
+        }
     }
 
 
@@ -33,10 +42,10 @@ public class MovieService {
             Movie movie = movieRepository.findByImdbId(imdbId);
             movieDetailsDto = movieMapper.map(movie);
         } else {
-            OmdbApiMovieDetails movieDetails = movieClient.getMovieDetails(imdbId);
-            Movie movie = movieMapper.mapToMovie(movieDetails);
+            OmdbApiResponse movieDetails = movieClient.getMovieDetails(imdbId);
+            Movie movie = movieMapper.mapToMovie((OmdbApiMovieDetails) movieDetails);
             movie.setImdbId(imdbId);
-            movieDetailsDto = movieMapper.map(movieDetails);
+            movieDetailsDto = movieMapper.map((OmdbApiMovieDetails) movieDetails);
             movieRepository.saveAndFlush(movie);
         }
         return movieDetailsDto;

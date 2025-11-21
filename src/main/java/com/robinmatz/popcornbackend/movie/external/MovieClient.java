@@ -1,6 +1,8 @@
 package com.robinmatz.popcornbackend.movie.external;
 
 import com.robinmatz.popcornbackend.config.HttpClientConfig;
+import com.robinmatz.popcornbackend.movie.external.dto.OmdbApiMovieDetails;
+import com.robinmatz.popcornbackend.movie.external.dto.OmdbApiResponse;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
 
@@ -15,11 +17,18 @@ public class MovieClient {
         this.config = config;
     }
 
-    public OmbdApiSearchResult getMovies(String query) {
-        return this.restClient.get().uri("/?apikey={apiKey}&s={query}", config.getApiKey(), query).retrieve().body(OmbdApiSearchResult.class);
+    public OmdbApiResponse getMovies(String query) {
+        return this.restClient.get()
+                .uri("/?apikey={apiKey}&s={query}", config.getApiKey(), query)
+                .retrieve()
+                .body(OmdbApiResponse.class);
     }
 
     public OmdbApiMovieDetails getMovieDetails(String imdbId) {
-        return this.restClient.get().uri("/?apikey={apikey}&i={ombdId}", config.getApiKey(), imdbId).retrieve().body(OmdbApiMovieDetails.class);
+        return this.restClient
+                .get()
+                .uri("/?apikey={apikey}&i={ombdId}", config.getApiKey(), imdbId)
+                .retrieve()
+                .body(OmdbApiMovieDetails.class);
     }
 }

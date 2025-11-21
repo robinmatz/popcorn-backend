@@ -1,4 +1,4 @@
-package com.robinmatz.popcornbackend.movie;
+package com.robinmatz.popcornbackend.movie.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

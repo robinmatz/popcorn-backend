@@ -1,7 +1,7 @@
 package com.robinmatz.popcornbackend.movie.controller;
 
-import com.robinmatz.popcornbackend.movie.MovieDetailsDto;
-import com.robinmatz.popcornbackend.movie.MovieDto;
+import com.robinmatz.popcornbackend.movie.dto.MovieDetailsDto;
+import com.robinmatz.popcornbackend.movie.dto.MovieDto;
 import com.robinmatz.popcornbackend.movie.MovieService;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,4 +1,4 @@
-package com.robinmatz.popcornbackend.movie;
+package com.robinmatz.popcornbackend.movie.dto;
 
 public class MovieDetailsDto {
     private String title;
