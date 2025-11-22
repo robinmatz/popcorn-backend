@@ -14,48 +14,48 @@ import java.util.List;
 public class MovieMapper {
 
   public List<MovieDto> map(OmdbApiSearch result) {
-    List<OmbdApiMovie> ombdApiMovies = result.search();
-    return ombdApiMovies.stream().map(this::map).toList();
+    List<OmbdApiMovie> omdbApiMovies = result.search();
+    return omdbApiMovies.stream().map(this::map).toList();
   }
 
   private MovieDto map(OmbdApiMovie ombdApiMovie) {
-    MovieDto movieDto = new MovieDto();
-    movieDto.setPoster(ombdApiMovie.getPoster());
-    movieDto.setTitle(ombdApiMovie.getTitle());
-    movieDto.setYear(ombdApiMovie.getYear());
-    movieDto.setImdbId(ombdApiMovie.getImdbID());
-    movieDto.setType(ombdApiMovie.getType());
-    return movieDto;
+    return new MovieDto(
+        ombdApiMovie.title(),
+        ombdApiMovie.year(),
+        ombdApiMovie.imdbId(),
+        ombdApiMovie.type(),
+        ombdApiMovie.poster()
+    );
   }
 
   public MovieDetailsDto map(OmdbApiMovieDetails movieDetails) {
-    MovieDetailsDto movieDetailsDto = new MovieDetailsDto();
-    movieDetailsDto.setTitle(movieDetails.title());
-    movieDetailsDto.setYear(movieDetails.year());
-    movieDetailsDto.setPoster(movieDetails.poster());
-    movieDetailsDto.setRuntime(movieDetails.runtime());
-    movieDetailsDto.setImdbRating(movieDetails.imdbRating());
-    movieDetailsDto.setPlot(movieDetails.plot());
-    movieDetailsDto.setReleased(movieDetails.released());
-    movieDetailsDto.setActors(movieDetails.actors());
-    movieDetailsDto.setDirector(movieDetails.director());
-    movieDetailsDto.setGenre(movieDetails.genre());
-    return movieDetailsDto;
+    return new MovieDetailsDto(
+        movieDetails.title(),
+        movieDetails.year(),
+        movieDetails.poster(),
+        movieDetails.runtime(),
+        movieDetails.imdbRating(),
+        movieDetails.plot(),
+        movieDetails.released(),
+        movieDetails.actors(),
+        movieDetails.director(),
+        movieDetails.genre()
+    );
   }
 
   public MovieDetailsDto map(Movie movie) {
-    MovieDetailsDto movieDetailsDto = new MovieDetailsDto();
-    movieDetailsDto.setTitle(movie.getTitle());
-    movieDetailsDto.setYear(movie.getYear());
-    movieDetailsDto.setPoster(movie.getPoster());
-    movieDetailsDto.setRuntime(movie.getRuntime());
-    movieDetailsDto.setImdbRating(movie.getImdbRating());
-    movieDetailsDto.setPlot(movie.getPlot());
-    movieDetailsDto.setReleased(movie.getReleased());
-    movieDetailsDto.setActors(movie.getActors());
-    movieDetailsDto.setDirector(movie.getDirector());
-    movieDetailsDto.setGenre(movie.getGenre());
-    return movieDetailsDto;
+    return new MovieDetailsDto(
+        movie.getTitle(),
+        movie.getYear(),
+        movie.getPoster(),
+        movie.getRuntime(),
+        movie.getImdbRating(),
+        movie.getPlot(),
+        movie.getReleased(),
+        movie.getActors(),
+        movie.getDirector(),
+        movie.getGenre()
+    );
   }
 
   public Movie mapToMovie(OmdbApiMovieDetails movieDetails) {
