@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface MovieRepository extends JpaRepository<Movie, Integer> {
 
-    boolean existsByImdbId(String imdbId);
+  boolean existsByImdbId(String imdbId);
 
-    Movie findByImdbId(String imdbId);
+  Movie findByImdbId(String imdbId);
 }

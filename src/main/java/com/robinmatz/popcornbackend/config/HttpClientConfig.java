@@ -9,18 +9,18 @@ import org.springframework.web.client.RestClient;
 @ConfigurationProperties(prefix = "app.movie-client")
 public class HttpClientConfig {
 
-    private String apiKey;
+  private String apiKey;
 
-    @Bean
-    public RestClient restClient() {
-        return RestClient.create("http://www.omdbapi.com");
-    }
+  @Bean
+  public RestClient restClient() {
+    return RestClient.create("http://www.omdbapi.com");
+  }
 
-    public String getApiKey() {
-        return apiKey;
-    }
+  public String getApiKey() {
+    return apiKey;
+  }
 
-    public void setApiKey(String apiKey) {
-        this.apiKey = apiKey;
-    }
+  public void setApiKey(String apiKey) {
+    this.apiKey = apiKey;
+  }
 }

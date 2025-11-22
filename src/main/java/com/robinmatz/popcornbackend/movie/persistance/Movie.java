@@ -4,141 +4,142 @@ import jakarta.persistence.*;
 
 @Entity
 public class Movie {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
 
-    @Column(name = "imdb_id")
-    private String imdbId;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private int id;
 
-    private String title;
+  @Column(name = "imdb_id")
+  private String imdbId;
 
-    private String year;
+  private String title;
 
-    private String poster;
+  private String year;
 
-    private String runtime;
+  private String poster;
 
-    @Column(name = "imdb_rating")
-    private String imdbRating;
+  private String runtime;
 
-    private String plot;
+  @Column(name = "imdb_rating")
+  private String imdbRating;
 
-    private String released;
+  private String plot;
 
-    private String actors;
+  private String released;
 
-    private String director;
+  private String actors;
 
-    private String genre;
+  private String director;
 
-    public int getId() {
-        return id;
-    }
+  private String genre;
 
-    public String getImdbId() {
-        return imdbId;
-    }
+  public int getId() {
+    return id;
+  }
 
-    public void setImdbId(String imdbId) {
-        this.imdbId = imdbId;
-    }
+  public String getImdbId() {
+    return imdbId;
+  }
 
-    public String getTitle() {
-        return title;
-    }
+  public void setImdbId(String imdbId) {
+    this.imdbId = imdbId;
+  }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+  public String getTitle() {
+    return title;
+  }
 
-    public String getYear() {
-        return year;
-    }
+  public void setTitle(String title) {
+    this.title = title;
+  }
 
-    public void setYear(String year) {
-        this.year = year;
-    }
+  public String getYear() {
+    return year;
+  }
 
-    public String getPoster() {
-        return poster;
-    }
+  public void setYear(String year) {
+    this.year = year;
+  }
 
-    public void setPoster(String poster) {
-        this.poster = poster;
-    }
+  public String getPoster() {
+    return poster;
+  }
 
-    public String getRuntime() {
-        return runtime;
-    }
+  public void setPoster(String poster) {
+    this.poster = poster;
+  }
 
-    public void setRuntime(String runtime) {
-        this.runtime = runtime;
-    }
+  public String getRuntime() {
+    return runtime;
+  }
 
-    public String getImdbRating() {
-        return imdbRating;
-    }
+  public void setRuntime(String runtime) {
+    this.runtime = runtime;
+  }
 
-    public void setImdbRating(String imdbRating) {
-        this.imdbRating = imdbRating;
-    }
+  public String getImdbRating() {
+    return imdbRating;
+  }
 
-    public String getPlot() {
-        return plot;
-    }
+  public void setImdbRating(String imdbRating) {
+    this.imdbRating = imdbRating;
+  }
 
-    public void setPlot(String plot) {
-        this.plot = plot;
-    }
+  public String getPlot() {
+    return plot;
+  }
 
-    public String getReleased() {
-        return released;
-    }
+  public void setPlot(String plot) {
+    this.plot = plot;
+  }
 
-    public void setReleased(String released) {
-        this.released = released;
-    }
+  public String getReleased() {
+    return released;
+  }
 
-    public String getActors() {
-        return actors;
-    }
+  public void setReleased(String released) {
+    this.released = released;
+  }
 
-    public void setActors(String actors) {
-        this.actors = actors;
-    }
+  public String getActors() {
+    return actors;
+  }
 
-    public String getDirector() {
-        return director;
-    }
+  public void setActors(String actors) {
+    this.actors = actors;
+  }
 
-    public void setDirector(String director) {
-        this.director = director;
-    }
+  public String getDirector() {
+    return director;
+  }
 
-    public String getGenre() {
-        return genre;
-    }
+  public void setDirector(String director) {
+    this.director = director;
+  }
 
-    public void setGenre(String genre) {
-        this.genre = genre;
-    }
+  public String getGenre() {
+    return genre;
+  }
 
-    @Override
-    public String toString() {
-        return "Movie{" +
-                "id=" + id +
-                ", imdbId='" + imdbId + '\'' +
-                ", title='" + title + '\'' +
-                ", year='" + year + '\'' +
-                ", poster='" + poster + '\'' +
-                ", runtime='" + runtime + '\'' +
-                ", imdbRating='" + imdbRating + '\'' +
-                ", plot='" + plot + '\'' +
-                ", released='" + released + '\'' +
-                ", actors='" + actors + '\'' +
-                ", director='" + director + '\'' +
-                ", genre='" + genre + '\'' +
-                '}';
-    }
+  public void setGenre(String genre) {
+    this.genre = genre;
+  }
+
+  @Override
+  public String toString() {
+    return "Movie{" +
+        "id=" + id +
+        ", imdbId='" + imdbId + '\'' +
+        ", title='" + title + '\'' +
+        ", year='" + year + '\'' +
+        ", poster='" + poster + '\'' +
+        ", runtime='" + runtime + '\'' +
+        ", imdbRating='" + imdbRating + '\'' +
+        ", plot='" + plot + '\'' +
+        ", released='" + released + '\'' +
+        ", actors='" + actors + '\'' +
+        ", director='" + director + '\'' +
+        ", genre='" + genre + '\'' +
+        '}';
+  }
 }

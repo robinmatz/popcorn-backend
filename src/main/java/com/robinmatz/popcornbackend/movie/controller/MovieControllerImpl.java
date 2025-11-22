@@ -11,22 +11,22 @@ import java.util.List;
 @RestController
 public class MovieControllerImpl implements MovieController {
 
-    private final MovieService movieService;
+  private final MovieService movieService;
 
-    public MovieControllerImpl(MovieService movieService) {
-        this.movieService = movieService;
-    }
+  public MovieControllerImpl(MovieService movieService) {
+    this.movieService = movieService;
+  }
 
-    @Override
-    @ResponseBody
-    public List<MovieDto> getMovies(String name) {
-        return movieService.getMovies(name);
-    }
+  @Override
+  @ResponseBody
+  public List<MovieDto> getMovies(String name) {
+    return movieService.getMovies(name);
+  }
 
-    @Override
-    @ResponseBody
-    public MovieDetailsDto getMovieDetails(String imdbId) {
-        return movieService.getMovieDetails(imdbId);
-    }
+  @Override
+  @ResponseBody
+  public MovieDetailsDto getMovieDetails(String imdbId) {
+    return movieService.getMovieDetails(imdbId);
+  }
 
 }

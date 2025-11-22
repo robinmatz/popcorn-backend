@@ -6,4 +6,5 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 @JsonDeserialize(as = OmdbApiError.class)
 public record OmdbApiError(@JsonProperty("Response") String response,
                            @JsonProperty("Error") String error) implements OmdbApiResponse {
+
 }
